@@ -1,0 +1,499 @@
+<!DOCTYPE HTML>
+<!-- Este archivo contiene casi todos los "tags html" con una breve explicación de qué son, qué significan, 
+	con qué versión de HTML y navegadores es compatible y si lo amerita, ejemplos que se pueden ver si se abre
+	esta página en un navegador web. Menciona CSS pero no lo usa, es HTML puro
+	El archivo principal de un sitio web debería llamarse "index". Las carpetas que acompañan a este archivo son
+	la estructura de carpetas que se recomienda para guardar archivos que no son html. 
+ -->
+<!-- esta declaración es lo primero que debe estar en tu documento para indicar que es HTML5
+	en HTML4 es distinto:  
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+-->
+<html lang="es">
+<!-- El tag html es el Inicio del DOM (Modelo de Objetos del Documento). Contiene todos los demás tags del documento. -->
+
+<head>
+	<!-- Contiene información "invisible" sobre el documento (NO se muestra en el contenido de la página web). 
+	Compatible: HTML5 y HTML4. Todos los navegadores. En HTML4 es obligatorio, en HTML5 no. 
+	Acepta Atributos Globales. 
+-->
+	<title>Título de la página.</title>
+	<!-- Es el título de la página.
+		Se mostrará en navegadores en la barra de Título y búsquedas de Google y Favoritos.
+		NO se muestra en el contenido de la página. 
+		Compatible: HTML5 y HTML4. Obligatorio. Todos los navegadores. 
+		Atributos Globales.
+	-->
+	<meta charset="UTF-8">
+	<!-- En HTML4 <meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+	<!-- Estos tres suelen ir juntos en HTML4. En HTML5 sólo es necesario el último. 
+		Establece Tipo de contenido y Tipo de Caracteres.
+		Usar "UTF-8" siempre que sea posible, o "ISO-8859-1" (Alfabeto Latino) para que muestre bien tildes áéíóú y ñ.
+	 -->
+
+	<meta name="description" content="Descripción para SEO en Google.">
+	<meta name="author" content="Neri Tisocco - neritisocco@gmail.com">
+	<meta name="keywords" content="palabras-clave, temas, contenido, temática">
+	<!-- metadata para navegadores. Descripción y palabras clave que aparecen en Google.  -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Debería ser usado siempre. Se usa junto a CSS para lograr "diseño responsivo" (que se adapta al tamaño de pantalla
+		de distintos dispositivos). El "viewport" es el área visible de la página.
+	-->
+	<meta http-equiv="refresh" content="120">
+	<!-- Refresca el documento cada X segundos. No se suele usar. -->
+
+	<style>
+		h5 {
+			color: red;
+		}
+	</style>
+	<!-- Se usa para definir estilos CSS en la página. Mejor usar el tag "link" con una "hoja de estilos css" separada. -->
+
+	<link rel="stylesheet" href="css/styles.css">
+	<!-- se usa para vincular archivos externos. Su principal uso es para linkear la "hoja de estilos" (archivo .css). 
+		Puede ponerse varias veces con links a varios archivos. 
+		El atributo rel es obligatorio, describe la relación entre ambos documentos. 
+	-->
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<!-- define el archivo favicon de la página (pequeño loguito que se muestra en la pestaña del navegador) -->
+
+	<script>
+		// Ej:	document.getElementById("demo").innerHTML = "Texto AGREGADO con JavaScript!";
+	</script>
+	<script src="js/scripts.js"></script>
+	<!-- El atributo type="text/javascript" es necesario en HTML4, pero no es necesario en HTML5.
+		Se usa para definir código JavaScript en la página. Mejor usar "src" para cargar un archivo .js externo.
+		Se suele poner en el header, o al final del body para evitar que el script se ejecute antes de que la página
+		termine de cargar y los elementos del DOM que usa no estén disponibles.
+	-->
+</head>
+
+<body>
+	<!-- El body o cuerpo es la parte VISIBLE de la página web.
+	En HTML4: 
+	- background="fondo.jpg" establece un link a la imagen de fondo.
+	- bgcolor="#E6E6FA" establece color de fondo.
+	- link=color establece el color de los links.
+	- alink=color establece el color del link activo. 
+	- vlink=color establece el color de los links visitados.
+	En HTML5 todos los atributos han sido removidos y reemplazados por el uso de CSS.
+	Ej: <body style="background-image:url(bgimage.jpg); background-color:#E6E6FA">
+ -->
+
+	<!-- ***************** -->
+	<!-- TAGS HTML BÁSICOS -->
+	<!-- ***************** -->
+
+	<!-- El elemento "heading" va desde h1 hasta h6. Lo normal es usar h1 h2 y h3.
+	Su tipo de letra, tamaño, etc se decide por estilos CSS style=""
+	El atributo align="left/center/right/justify" NO es compatible con HTML5. Usar CSS.
+-->
+	<h1>h1: Título Más Importante (heading)</h1>
+	<!-- h1 Crea un título "Muy importante" (grande)  -->
+	<h2>h2: Título más importante</h2>
+	<h3>h3: Título importante</h3>
+	<h4>h4: Título menos importante</h4>
+	<h5>h5: Título poco importante</h5>
+	<h6>h6: Título muy poco importante</h6>
+	<!-- h6 Crea un título "poco importante" (muy pequeño). -->
+
+	<p>p: Esto es un párrafo.</p>
+	<!-- Señala un párrafo de texto. 
+	Los navegadores por defecto dejan un espacio entre párrafos, se puede cambiar con CSS
+	align="left/center/right/justify" NO se usa en HTML5.
+-->
+	<p>Esto es otro
+		párrafo con espacios y
+		saltos de líne (que no se muestran).</p>
+	<!-- Los navegadores ignoran los espacios y saltos de línea dentro de los párrafos. -->
+	<p>br: Esto <br> es para hacer un <br> párrafo con espacios y <br> saltos de línea (que sí se muestran).</p>
+	<!-- br se usa para generar saltos de línea dentro de párrafos. -->
+
+	<hr>
+	<!-- Se usa para crear una línea separatoria. Para cambios de tema entre párrafos. 
+	HTML4: atributos align, noshade, size, width. No soportados en HTML5. -->
+
+	<!-- ************************ -->
+	<!-- TAGS DE FORMATO DE TEXTO -->
+	<!-- ************************ -->
+
+	<!-- No soportados en HTML5:
+	<acronym title="as soon as possible">ASAP</acronym>
+	Muestra el significado de un acrónimo. EN HTML5 usar <abbr>
+	<big>Texto Grande. </big> Define texto grande. Usar CSS.
+	<center>Texto centrado</center>. Usar CSS
+	<font size="2" color="blue" face="verdana">Define fuente y tamaño</font> Usar CSS.
+	<strike>Texto tachado</strike> Usar <del> or <s> o usar CSS.
+	<tt>Teletipo. Texto monoespacio de consola</tt> Usar <code> para código fuente o <var> o CSS.	
+-->
+	<abbr title="Texto Explicativo De La Abreviatura.">ABBR: ABREVIATURA</abbr>
+	<!-- Define un acrónimo o abreviatura. La abreviatura se muestra subrayada con puntos y al pasar el mouse
+	por sobre la palabra, se muestra el texto del title. -->
+
+	<address>
+		<p>adress: Escrito por Neri Tisocco. Datos: Dirección. Mail. Teléfono.</p>
+	</address>
+	<!-- Puede tener varias líneas, define información de contacto y dirección postal. -->
+
+	<p>b: Texto <b>en negrita</b></p>
+	<!-- Texto en negrita. Se recomienda no usarlo, mejor usar <strong> o <em> -->
+
+	<blockquote cite="http://www.ejemplo.com/">
+		<p>"blockquote: Esto es una cita a una frase de el famoso filósofo y filántropo contemporáneo" Neri Tisocco.</p>
+		<p>Neri Tisocco.</p>
+	</blockquote>
+	<!-- Un pedazo de texto que es una cita. -->
+	<p>q: Esto es un texto que contiene <q>una cita breve</q> en medio de una oración.</p>
+	<!-- para una cita corta dentro de una oración usar <q>. Le agrega comillas a la frase. -->
+
+	<p>em: Esto es <em>Texto enfatizado</em> (importante)</p>
+	<p>strong: Esto es <strong>Texto fuerte (importante)</strong></p>
+	<p>i: Esto es <i>Texto en itálica</i>. O voz alternativa.</p>
+	<!-- Se recomienda no usar este, usar em,mark,cite. -->
+	<p>mark: Esto es <mark>Texto marcado</mark>.</p>
+	<!-- Es nuevo de HTML5 -->
+	<p>del: Esto es <del>Texto tachado</del> y <ins>reemplazado</ins></p>
+	<!-- en HTML5 reemplaza <strike> de HTML4 -->
+	<p>code: Esto es <code>Código fuente de programas de computadora.</code></p>
+	<!-- Se puede usar también <samp>Como la salida de consola</samp> <kbd>Entrada de teclado</kbd>-->
+	<p>var: <var>Variable</var></p>
+	<p>small: Esto es <small>Texto más pequeño.</small></p>
+	<p>u: Esto es <u>Texto subrayado (underline)</u>.</p>
+	<!-- Se recomienda no usarlo. -->
+	<p>sub: Esto es <sub>Subtexto</sub>.</p>
+	<p>sup: Esto es <sup>Supertexto</sup>.</p>
+	<!-- Texto más pequeño que se muestra mitad más arriba o abajo del normal. Por ejemplo para hacer el cuadrado de un número -->
+
+	<pre>
+		pre: Texto que respeta el formato,      espacios y los
+		saltos de 
+		    línea que se 
+		escriban en un párrafo
+</pre>
+	<!-- Texto que respeta los espacios y saltos de línea sin usar br.  -->
+
+	<template>
+		<h2>Flower</h2>
+	</template>
+	<!-- template sirve para guardar código HTML y no mostrarlo. Después se puede mostrar usando JavaScript. -->
+
+	<hr>
+	<!-- ******************* -->
+	<!--    TAGS DE LINKS    -->
+	<!-- ******************* -->
+	<!-- Atributos:
+	- href="www.ejemplo.com" dirección de la página web a la que irá.
+	- download indica que el archivo se descargará. Navegadores viejos no lo soportan
+	- rel="alternate/author/bookmark/external/help/license/next/nofollow/noreferrer/noopener/prev/search/tag". 
+	- target="_blank/_parent/_self/_top" indica dónde se abrirá el link. 
+	- type="text/css" indica el tipo de archivo. -->
+	<a id="IdElemento" href="https://www.ejemplo.com/link_absoluto.html">Link absoluto</a>
+	<!-- Link absoluto: a una página externa. -->
+	<a href="/otrapagina/pruebas.html">Link interno</a>
+	<!-- Link relativo: a una página interna -->
+	<a href="mailto:neritisocco@gmail.com">Enviar Mail</a>
+	<a href="mailto:neritisocco@gmail.com?Subject=Hola%20amigo">Enviar Mail con asunto</a>
+	<!-- Link de envío de mail. Se puede especificar un asunto. -->
+	<a href="javascript:alert('Hola');">Código JavaScript</a>
+	<!-- Link a un código javascript -->
+	<a href="#IdElemento">Elemento interno</a>
+	<!-- Link a un elemento dentro del documento que tenga el #IdElemento.
+	<a name="NAME"></a> se usaba en HTML4
+-->
+	<hr>
+
+	<!-- ************************ -->
+	<!-- TAGS DE IMÁGENES -->
+	<!-- ************************ -->
+	<img src="img/imagen.gif" title="BANANA" alt="Banana bailando" height="100" width="100">
+	<!-- Muestra una imagen. Puede rodearse del tag a para convertir la imagen en un link.
+Atributos:
+src="link" Obligatorio. Dirección del archivo de imagen .jpg .bmp .png .gif. 
+alt="Texto" Requerido. Texto alternativo que aparece en lugar de la imagen si esta no puede mostrarse.
+height="42" Alto en pixeles.
+width="42"  Ancho en pixeles. Puede reducirse, la imagen se mostrará más pequeña de lo que es. 
+Atributos HTML4 (no soportados en HTML5, usar CSS con id y class): 
+	align="top/bottom/middle/left/right"
+	border="5" indica el grosor del Borde alrededor de la imagen.
+	hspace="10" indica el espacio horizontal, antes y después de la imagen.
+	vspace"10" indica el espacio vertical, arriba y abajo de la imagen.
+-->
+	<hr>
+
+	<!-- ************************ -->
+	<!-- TAGS DE AUDIOS/VIDEO     -->
+	<!-- ************************ -->
+	<audio controls>
+		<source src="media/horse.ogg" type="audio/ogg">
+		<source src="media/horse.mp3" type="audio/mpeg">
+		Tu navegador no soporta tag de audio.
+	</audio>
+	<!-- Tag nuevo de HTML5. Incompatible con algunos navegadores antiguos. Internet Explorer no soporta .ogg 
+	El texto aparecerá en navegadores que no soportan este tag 
+	Atributos:
+	controls especifica que los controles se mostrarán
+	autoplay especifica que se autoreproducirá el audio 
+	loop: espeficifa que se repetirá infinitamente el audio. 
+	src especifica la ubicación del archivo de audio. 
+-->
+	<br>
+	<video width="320" height="240" controls>
+		<source src="media/movie.mp4" type="video/mp4">
+		<source src="media/movie.ogg" type="video/ogg">
+		Tu navegador no soporta el tag video.
+	</video>
+	<!-- Tag nuevo de HTML5. Incompatible con algunos navegadores antiguos. Algunos no soportan .ogg o WebM
+Atributos: controls, autoplay, loop, src, mute y atributos de ancho y alto, height width -->
+	<hr>
+
+	<!-- ****************** -->
+	<!--   TAGS DE LISTAS   -->
+	<!-- ****************** -->
+	<ul>
+		<li>ul: li: Primer Item de la Lista desordenada.</li>
+		<li>li: Segundo Item</li>
+		<li>
+			<ul>
+				<li>li li: Lista anidada</li>
+				<li>Segundo Subitem</li>
+				<li>Tercer Subitem</li>
+			</ul>
+		</li>
+		<li>Tercer Item</li>
+		<li>
+			<ol>
+				<li>ol: li: Lista anidada ordenada</li>
+				<li>li: Segundo Subitem</li>
+				<li>Tercer Subitem</li>
+			</ol>
+		</li>
+	</ul>
+	<!-- ul = unordered list, lista desordenada.
+	li: es un item	
+Atributos HTML4 no compatibles con HTML5: compact y type="disc/square/circle" -->
+
+	<ol>
+		<li>primer item de la lista ordenada.</li>
+		<li>
+			<ol start="52">
+				<li>décimo</li>
+				<li>décimo primero</li>
+				<li>décimo segundo</li>
+			</ol>
+		</li>
+		<li>segundo</li>
+	</ol>
+	<!-- ol = ordered list, lista ordenada. 
+	Atributos:
+	start para no empezar en 1.
+	reversed para contar 5 4 3 2 1. Nuevo en HTML5, no compatible con HTML4.
+	type=1/A/a/I/i indica el tipo de numeración usada, 1. a) A) I) i) -->
+
+	<dl>
+		<dt>Description List: Término 1 de </dt>
+		<dd>Descripcioón 1</dd>
+		<dt>Término 2</dt>
+		<dd>Descripción 2</dd>
+	</dl>
+	<!-- dl: description list. Una lista con descripciones.
+	dt: term. La palabra o término a describir.
+	dd: description item. La descripción de la palabra. -->
+
+	<hr>
+	<!-- ******************** -->
+	<!--    TAGS DE TABLAS    -->
+	<!-- ******************** -->
+	<table>
+		<!-- por defecto las tablas no tienen diseño ni borde ni color.
+		En CSS los bordes se aplican con la propiedad border:1px solid black; y border-colapse: colapse; 
+		Atributos HTML4: align, bgcolor, border, cellpadding, cellspacing, frame, rules, sumary, width. En HTML5 no se usan. 
+	-->
+		<caption>Tabla: Encabezado</caption>
+		<tr>
+			<!-- Table Row. Indica las filas. Cada fila contiene las data cells de sus respectivas columnas
+		Atributos HTML4: align, bgcolor, char, charoff, valign (alineación vertical). En HTML5 no se usan, se usa CSS. -->
+			<th>Título 1</th>
+			<!-- Table header. Es la fila de títulos de la tabla, no es obligatoria.
+		Atributos HTML4: align, bgcolor, char, charoff, valign (alineación vertical), height, width, nowrap. En HTML5 no se usan. 
+		HTML5:
+		headers determina cuáles son las cabeceras que le corresponden a una celda, se usa el id de la celda
+		colspan determina cuántas columnas de ancho ocupa una celda.
+		rowspan determina cuántas filas de alto ocupa una celda.
+		scope col/colgroup/row/rowgroup especifica si es la cabecera de una columna una fila o grupo de celdas.
+	-->
+			<th>Título 2</th>
+			<th>Título 3</th>
+		</tr>
+		<tr>
+			<td colspan="2">Celda 2</td>
+			<!-- Table data cell. Define las celdas de la columna que corresponde a esta fila.
+			Es recomendable que haya la misma cantidad de celdas por fila, 
+			Pueden contener cualquier tipo de datos, texto, imágenes,audios, videos, listas, incluso otras tablas 
+			Atributos HTML4: align, bgcolor, char, charoff, valign (alineación vertical), height, width, nowrap. En HTML5 no se usan. 
+			HTML5:
+			colspan determina cuántas columnas de ancho ocupa una celda.
+			rowspan determina cuántas filas de alto ocupa una celda. 
+			headers determina cuáles son las cabeceras que le corresponden a una celda, se usa el id de la celda
+
+
+		-->
+			<td>Celda 2</td>
+		</tr>
+		<tr>
+			<td>Celda 3</td>
+			<td>Celda 3</td>
+			<td>Celda 3</td>
+		</tr>
+		<!-- <tfoot> <thead> y <tbody> se usan para agrupar las partes de cabeza, cuerpo y pie de la tabla. 
+		Se pueden usar para dar estilos CSS o para que el navegador haga scroll sólo en el body -->
+	</table>
+
+	<hr>
+	<!-- ************************ -->
+	<!--    TAGS DE FORMULARIOS   -->
+	<!-- ************************ -->
+	<form action="/codigo.php" method="get">
+		<!-- Crea un formulario para que el usuario ingrese información. 
+	Atributos HTML4: accept
+	Compatibles HTML5:
+	action= especifica dónde, a qué archivo, mandar la información. En HTML5 no es requerido.
+	method="get/post" define de qué forma se envía la información a la página de action=
+		"get" La información puede ser enviada como una variable de la URL
+		"post" se envía oculta como transacción HTTP post.
+	target="_blank/_self/_parent/_top" especifica dónde, en qué página, mostrar el resultado que se recibe
+	name= un nombre para el formulario
+	autocomplete=on/off especifica si un formulario acepta el autocompletado.
+	enctype="application/x-www-form-urlencoded"
+			"multipart/form-data"
+			"text/plain" 
+	novalidate especifica que el formulario no debe validar cuando se envía.
+
+    <input> <textarea> <button> <select> <option> <optgroup> <fieldset> <label> <output>
+-->
+		Nombre y Apellido: <input type="text" name="nombre" value="Campo de texto de Formulario"><br>
+		<!-- input es un campo de distintos tipos que se usan para enviar datos.
+	el atributo "align" no es compatible con HTML5
+-->
+		<p><input type="text" name="" id="" value="Texto"> Texto</p>
+		<!-- text: Por defecto es el tipo de campo de texto de una sola línea -->
+		<p><input type="button" value="Botón clickeable"></p>
+		<!-- button:	Define un botón clickeable (suele usarse con javascript) -->
+		<p><input type="checkbox" name="" id=""> Checkbox</p>
+		<!-- checkbox: 	Define un boton para check -->
+		<p><input type="radio" name="" id=""> Radio</p>
+		<!-- radio: Define un botón de radio -->
+		<p><input type="range" name="" id=""> Rango</p>
+		<!-- range: Define un control de rango (un deslizante) -->
+		<p><input type="color" name="" id=""> Color</p>
+		<!-- color: Define un selector de color -->
+		<p><input type="date" name="" id=""> Date</p>
+		<!-- date:	Define un control de fecha (año, mes, día)
+		 datetime-local: Define un control de fecha y hora -->
+		<p><input type="email" name="" id=""> Email</p>
+		<!-- email: Define un campo de texto de tipo email (para validación) -->
+		<p><input type="file" name="" id=""> File</p>
+		<!-- file:	Define un botón para buscar un archivo en tu disco (para subirlo) -->
+		<p><input type="hidden" name=""> Hidden</p>
+		<!-- hidden: Define un campo oculto, se usa para envío de datos que el usuario no debe ver -->
+		<p><input type="password" name="" id=""> Password</p>
+		<!-- password:	Define un campo para ingresar un password (que se oculta con asteriscos) -->
+		<p><input type="reset" value="Resetear"> Reset</p>
+		<!-- reset:	Define un botón de resetear el formulario -->
+		<p><input type="submit" value="Enviar"></p>
+		<!-- submit: Define el botón de envío -->
+		<!--Otros Tipos: 
+	image 		Define un botón de tipo imagen
+	month 		Define un control de mes y año
+	number 		Define un campo para ingresar un número
+	search 		Define un campo de texto para ingresar una búsqueda
+	tel 		Define un campo de texto para ingresar un número de teléfono
+	time 		Define un control para ingresar tiempo 
+	url 		Define un campo de texto para ingresar una URL
+	week 		Define un control de tiempo de tipo semana y año
+ -->
+	</form>
+
+	<hr>
+	
+	<!-- ************************ -->
+	<!-- TAGS MARCACIÓN SEMÁNTICA -->
+	<!-- ************************ -->
+	<!-- HTML Semántico es el uso de las etiquetas HTML para reforzar el significado (semántica), de la información 
+	en vez de su formato (apariencia). Esto por ejemplo ayuda a identificar qué es cada elemento de la página y
+	para ayudar a los buscadores a clasificarlos correctamente. 
+	HTML5 introduce nuevos tags con esta finalidad. Antes se usaba class o id para identificar estas secciones.
+	header nav section article main aside footer son tags semánticos que se usan para identificar las distintas 
+	partes de una página web, y así facilitar reconocer su estructura básica 
+	sin CSS no tienen ninguna apariencia definida, pues son CONTENEDORES, no son tags de apariencia.
+-->
+
+<div>div: el tag más importante para darle estructura a la página.
+	<div  id="demo" class="division">Este texto va a cambiar por Javascript!</div></div>
+<!-- el tag div es el más importante para darle estructura a una página web.
+Se anidan divs adentro de divs. Cada div es una sección a la que se le puede dar un ancho y alto. 
+	id: es el nombre que lo identifica. Debe ser único.
+	class: es la clase a la que pertenece. Ambos atributos se usan en css para darle formato visual, color de fondo
+	tipo de letra, ancho, borde, espaciado, e infinidad de combinaciones que se pueden crear usando CSS.
+  -->
+
+	<header>
+		<!-- contiene la cabecera de la página. generalmente tiene un logo, un menú de navegación, 
+			información del sitio, tags h1, h2, h3...
+			puede haber varios tags de header, pero no dentro de tags de footer, adress o de otro header 
+		-->
+		<nav>
+			<!-- menú de navegación. Generalmente una Lista Desordenada, que se le da apariencia con CSS -->
+			<ul>
+				<li>header: nav : menu item </li>
+				<li>item Menu</li>
+				<li>item Menu</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<!-- sección principal de la pagina, donde va el contenido. -->
+		<article>
+			<!-- los artículos son los que contienen el texto a leer, la información, que puede tener imágenes -->
+			<header>
+				<!-- un artículo puede tener su propia cabecera.  -->
+				<h2>main: Título del artículo</h2>
+				<p>Texto de la cabecera <a href="#">Link al Escritor del artículo</a></p>
+			</header>
+			<p>Texto texto texto.</p>
+		</article>
+	</main>
+
+	<article>
+		<header>
+			<h2>article: Título de otro artículo</h2>
+			<p>Párrafo de texto de otro artículo <a href="#">Link al Escritor</a></p>
+		</header>
+		<p>Texto texto texto.</p>
+	</article>
+
+	<section>
+		<h3>section: Título de la sección</h3>
+	</section>
+	<!-- secciones no principales de una página web -->
+	<aside>
+		<!-- sección al costado del main, suele estar a la izquierda y contener un menú de opciones secundarias -->
+		<h2>aside: Título al costado</h2>
+		<p>Texto al costado.</p>
+	</aside>
+
+	<footer>
+		<!-- El pié de página suele contener información de contacto, links útiles, información comercial. -->
+		<p>footer: Copyright 2019 Neri Tisocco</p>
+	</footer>
+
+	<script src="js/scripts.js"></script>
+</body>
+<!-- Este documento/tutorial fue creado por Neri Tisocco para el ISCC - Instituto Superior de Curuzú Cuatiá en 2019.
+	🄯 Disponibles bajo licencia copyleft "Creative Commons Atribución - Compartir Igual (by-sa)"
+	Por favor no eliminar esta declaración de autor.  
+	Si encontrás algún error o le hacés alguna modificación por favor contame al mail neritisocco@gmail.com
+	Gracias y espero que te sirva de ayuda :D
+ -->
+
+</html>
